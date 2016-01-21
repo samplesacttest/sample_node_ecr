@@ -1,4 +1,3 @@
-# Language setting
 language: node_js
 
 # Version number
@@ -17,10 +16,10 @@ env:
 
 build:
   pre_ci:
-    - docker build --rm -t=shippabledocker/vidya_sample_node .
+    - docker build --rm -t=gcr.io/vidya-project/newimg .
 
   pre_ci_boot:
-    image_name: shippabledocker/vidya_sample_node
+    image_name: gcr.io/vidya-project/newimg
     image_tag: latest
     pull: false
     options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
@@ -30,7 +29,7 @@ build:
     - ls -al
 
   post_ci:
-    - docker push shippabledocker/vidya_sample_node
+    - docker push gcr.io/vidya-project/newimg
 
   smoke_test:
     - sudo ls /
@@ -56,8 +55,8 @@ integrations:
     
 
   hub:
-    - integrationName: "shippable-docker"
-      type: docker
+    - integrationName: "gcr-shiptest"
+      type: Google Container Registry
       branches:
         only:
           - master
