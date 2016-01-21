@@ -56,7 +56,7 @@ integrations:
 
   hub:
     - integrationName: "gcr-shiptest"
-      type: Google Container Registry
+      type: gcr
       branches:
         only:
           - master
