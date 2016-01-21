@@ -17,10 +17,10 @@ env:
 
 build:
   pre_ci:
-    - docker build --rm -t=vidyar/sample_node .
+    - docker build --rm -t=shippabledocker/vidya_sample_node .
 
   pre_ci_boot:
-    image_name: vidyar/sample_node
+    image_name: shippabledocker/vidya_sample_node
     image_tag: latest
     pull: false
     options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
@@ -30,7 +30,7 @@ build:
     - ls -al
 
   post_ci:
-    - docker push vidyar/sample_node
+    - docker push shippabledocker/vidya_sample_node
 
   smoke_test:
     - sudo ls /
@@ -56,7 +56,7 @@ integrations:
     
 
   hub:
-    - integrationName: "vidyar-docker"
+    - integrationName: "shippable-docker"
       type: docker
       branches:
         only:
