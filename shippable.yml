@@ -16,10 +16,10 @@ env:
 
 build:
   pre_ci:
-    - docker build --rm -t=gcr.io/vidya-project/newimg .
+    - docker build --rm -t=gcr.io/vidya-project/newimg1 .
 
   pre_ci_boot:
-    image_name: gcr.io/vidya-project/newimg
+    image_name: gcr.io/vidya-project/newimg1
     image_tag: latest
     pull: false
     options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
@@ -29,7 +29,7 @@ build:
     - ls -al
 
   post_ci:
-    - docker push gcr.io/vidya-project/newimg
+    - docker push gcr.io/vidya-project/newimg1
 
   smoke_test:
     - sudo ls /
