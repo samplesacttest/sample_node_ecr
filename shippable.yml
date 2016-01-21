@@ -44,7 +44,7 @@ integrations:
     - integrationName: "vidya-slack"
       type: slack
       recipients:
-        - newbuildsystem
+        - pvt-channel
       branches:
         only:
           - master
