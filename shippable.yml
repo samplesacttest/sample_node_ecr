@@ -20,7 +20,7 @@ build:
 
   pre_ci_boot:
     image_name: gcr.io/vidya-project/newimg2
-    image_tag: latest
+    image_tag: master.9.1 
     pull: true
     options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
 
