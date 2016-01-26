@@ -16,7 +16,7 @@ env:
 
 build:
   pre_ci:
-    - docker build --rm -t=ShippableTest/vidya1-repo1 .
+    - docker build --rm -t=480971114143.dkr.ecr.us-east-1.amazonaws.com/vidya1-repo1 .
 
   pre_ci_boot:
     image_name: 480971114143.dkr.ecr.us-east-1.amazonaws.com/vidya1-repo1
