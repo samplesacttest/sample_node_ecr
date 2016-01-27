@@ -13,14 +13,13 @@ env:
  # matrix:
   #  - M1=ONE
    # - M2=TWO
-
 build:
   #pre_ci:
    # - docker build --rm -t=480971114143.dkr.ecr.us-east-1.amazonaws.com/vidya1-repo1 .
 
   pre_ci_boot:
-    image_name: 480971114143.dkr.ecr.us-east-1.amazonaws.com/vidya1-repo1
-    image_tag: latest
+    image_name: drydock/u12nodall
+    image_tag: prod
     pull: true
     options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
 
@@ -30,6 +29,7 @@ build:
 
 
   post_ci:
+    - docker build --rm -t=480971114143.dkr.ecr.us-east-1.amazonaws.com/vidya1-repo2 .
     - docker push 480971114143.dkr.ecr.us-east-1.amazonaws.com/vidya1-repo2
 
   smoke_test:
