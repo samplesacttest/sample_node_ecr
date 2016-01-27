@@ -30,7 +30,7 @@ build:
 
 
   post_ci:
-    - docker push 480971114143.dkr.ecr.us-east-1.amazonaws.com/vidya1-repo1 
+    - docker push 480971114143.dkr.ecr.us-east-1.amazonaws.com/vidya1-repo2 
 
   smoke_test:
     - sudo ls /
