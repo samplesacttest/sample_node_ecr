@@ -62,7 +62,5 @@ integrations:
   hub:
     - integrationName: "ecr-vidya"
       type: aws
-      branches:
-        only:
-          - master
+      
   
