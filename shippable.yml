@@ -18,8 +18,8 @@ build:
    # - docker build --rm -t=480971114143.dkr.ecr.us-east-1.amazonaws.com/vidya1-repo1 .
 
   pre_ci_boot:
-    image_name: drydock/u12nodall
-    image_tag: prod
+    image_name: 480971114143.dkr.ecr.us-east-1.amazonaws.com/vidya1-repo1
+    image_tag: latest
     pull: true
     options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
 
